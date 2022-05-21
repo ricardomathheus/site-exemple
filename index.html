@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um exemplo de site</title>
+    <style>
+        .rotate{
+            animation: animRotate 1s infinite;
+        }
+
+        @keyframes animRotate {
+            0%{
+                transform: rotate(0deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Lembra que eu falei de algo chamado "desenvolvimento web"?</h1>
+        <p>
+            pois então eu estou aqui e isso é um applicação web(um site)
+            <br>
+            espera?
+            <br>
+            estava esperando algo mais legal?
+            ok, então click no botão abaixo
+        </p>  
+    </main>
+
+    <button onclick="rotate()">algo mais legal?</button>
+    <script>
+        const rotateElement = document.querySelector('main')
+        let buttonClicked = false
+
+        function rotate(){
+            rotateElement.classList.add('rotate')
+            
+            if (buttonClicked === false) {
+                setTimeout(() => {
+                    document.querySelector('body').innerHTML += '<p>ok, isso ainda está sem graça</p>'
+                }, 2000);
+            }
+            
+            buttonClicked = true
+
+        }
+    </script>
+</body>
+</html>
